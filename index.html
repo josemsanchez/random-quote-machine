@@ -21,14 +21,9 @@
 			console.log("New Quote");
 			let quoteSize = QUOTESBANK.length;
 			let randomIndex = Math.floor(Math.random() * quoteSize)
-			//let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=%22"
-			let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes%20"
-			//Add the quote
-			let quoteInApiFormat = QUOTESBANK[randomIndex].quote.replace(/ /g, "%20");
-			twitterLink += "%22" + quoteInApiFormat + "%22"
-			//Add the author
-			let authorInApiFormat = QUOTESBANK[randomIndex].author.replace(/ /g, "%20");
-			twitterLink += " - " + authorInApiFormat
+			let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="
+			//Add the quote and the author
+			twitterLink += encodeURIComponent('"' + QUOTESBANK[randomIndex].quote + '" ' + QUOTESBANK[randomIndex].author)
 			document.getElementById("text").innerText = QUOTESBANK[randomIndex].quote;
 			document.getElementById("author").innerText = QUOTESBANK[randomIndex].author;
 			document.getElementById("tweet-quote").href = twitterLink;
