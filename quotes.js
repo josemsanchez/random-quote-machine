@@ -483,5 +483,9 @@ const QUOTESBANK=[
 			  {
 				quote: "Light tomorrow with today!",
 				author: "Elizabeth Browning"
+			  },
+			  {
+				quote: "It's never wrong to do the right thing",
+				author: "Mark Twain"
 			  }
 		];
